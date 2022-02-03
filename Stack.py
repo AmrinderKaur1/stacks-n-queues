@@ -1,3 +1,47 @@
+# stack implementation using list
+
+class Stack(object):
+    def __init__(self):
+        self.li = []
+
+    def push(self, item):
+        self.li.append(item)
+        
+    def delete(self):
+        return self.li.pop()
+    
+    def peek(self):
+        if len(self.li):
+            return self.li[-1]
+        return None
+    
+    def isEmpty(self):
+        return len(self.li) > 0
+    
+s1 = Stack()
+
+print(s1.peek()) # returns None
+
+s1.push(11)
+print(s1.peek()) # returns 11
+
+s1.push(21)
+print(s1.peek()) # returns 21
+
+s1.push(31) 
+print(s1.peek()) # returns 31
+
+# delete everything one by one
+print(s1.delete()) # returns 31
+print(s1.peek()) # returns 21
+
+print(s1.delete()) # returns 21
+print(s1.peek()) # returns 11
+
+print(s1.delete()) # returns 11
+print(s1.peek()) # returns None
+
+--------------------------------------------------
 # stack implementation using linked list
 
 class Node(object):
