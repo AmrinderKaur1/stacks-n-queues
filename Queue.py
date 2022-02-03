@@ -1,4 +1,52 @@
+# queue implementation using list
+
+class Queue(object):
+    def __init__(self):
+        self.li = []
+
+    def push(self, item):
+        self.li.append(item)
+        
+    def delete(self):
+        return self.li.pop(0)
+    
+    def peek(self):
+        if len(self.li):
+            return self.li[0]
+        return None
+    
+    def isEmpty(self):
+        return len(self.li) > 0
+    
+q1 = Queue()
+
+print(q1.peek()) # returns None
+
+q1.push(11)
+print(q1.peek()) # returns 11
+
+q1.push(21)
+print(q1.peek()) # returns 11 
+
+q1.push(31) 
+print(q1.peek()) # returns 11
+
+# stack is 11->21->31
+
+# # delete everything one by one
+print(q1.delete()) # returns 11
+print(q1.peek()) # returns 21
+
+print(q1.delete()) # returns 21
+print(q1.peek()) # returns 31
+
+print(q1.delete()) # returns 31
+print(q1.peek()) # returns None
+
+
+--------------------------------------
 # USING LINKED LIST.
+
 class Node(object):
     def __init__(self, value):
         self.value = value
